@@ -10,6 +10,7 @@
  * 
  */
 
+// Cell saving struct for savefile size reduction 
 USTRUCT(BlueprintType)
 struct FSavingCell
 {

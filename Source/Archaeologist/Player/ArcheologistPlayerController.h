@@ -20,7 +20,9 @@ class ARCHAEOLOGIST_API AArcheologistPlayerController : public APlayerController
 public:
 	AArcheologistPlayerController();
 
+	// APlayerController begin
 	virtual void BeginPlay() override;
+	// APlayerController end
 
 	// Initialize widgets
 	void InitViewport();

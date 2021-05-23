@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-
 #include "Grid.h"
 #include "Archaeologist/Core/Saving/ArchaeologistSaveGame.h"
 #include "UObject/NoExportTypes.h"
@@ -63,7 +62,7 @@ protected:
 	int32 MaxDepthLayers = 3;
 
 	UPROPERTY(Category = Info, EditAnywhere, BlueprintReadOnly, meta = (ClampMin = "0", UIMin = "0"))
-	float TreasurePropabilityPerLayer = 0.2;
+	float TreasurePropabilityPerLayer = 0.15;
 
 	// Set default values and init then
 	UFUNCTION()

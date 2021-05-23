@@ -26,9 +26,10 @@ class ARCHAEOLOGIST_API AArchaeologistGameModeBase : public AGameModeBase
 public:
 	AArchaeologistGameModeBase();
 
+	// AGameModeBase begin
 	virtual void BeginPlay() override;
-
 	virtual void Reset() override;
+	// AGameModeBase end
 
 	UFUNCTION(BlueprintCallable, Category = "ArchaeologistGameModeBase")
 	void AddGamePoint();
@@ -63,7 +64,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "ArchaeologistGameModeBase")
 	FORCEINLINE bool IsGameStarted() const { return bIsGameStarted; };
 	
-	UPROPERTY(BlueprintAssignable, Category = "Game")
+	UPROPERTY(BlueprintAssignable, Category = "ArchaeologistGameModeBase")
 	FGameOverEvent OnGameOver;
 
 protected:
@@ -82,16 +83,17 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widgets")
 	TSubclassOf<UPlayerWidget> DefaultPlayerWidgetClass;
 
-	UPROPERTY()
-	UPlayerWidget* DefaultPlayerWidget;	
-
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Widgets")
 	TSubclassOf<UGridWidget> DefaultGridWidgetClass;
 
+private:
+	UPROPERTY()
+	bool bIsGameStarted = true;
+
+	UPROPERTY()
+	UPlayerWidget* DefaultPlayerWidget;	
+
 	UPROPERTY()
 	UGrid* Grid;
-
-private:
-	bool bIsGameStarted = true;
 	
 };
